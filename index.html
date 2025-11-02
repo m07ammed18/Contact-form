@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="main.css" />
+    <title>Frontend Mentor | Contact form</title>
+    <script src="form.js" defer></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success-msg">
+      <h4><span><img src="./assets/images/icon-success-check.svg" alt="Success icon"></span>Message Sent!</h4>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+    <main class="contact">
+
+      <h1>Contact Us</h1>
+      <form novalidate>
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="first-name" required />
+          <span class="error-message" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="last-name" required />
+          <span class="error-message" aria-live="polite"></span>
+        </div>
+        <div class="form-group span-all">
+          <label for="email">Email</label>
+          <input type="email" data-error="Please enter a valid email address
+          " id="email" name="email" required />
+          <span class="error-message" aria-live="polite"></span>
+        </div>
+        <!-- Radio Buttons -->
+        <fieldset class="span-all">
+          <legend>Query Type</legend>
+          <div class="form-group">
+            <input
+              type="radio"
+              name="query"
+              id="general"
+              value="General Enquiry"
+              data-error="Please select a query type"
+              required
+            />
+            <label for="general">General Enquiry</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="radio"
+              name="query"
+              id="support"
+              value="Support Request"
+              data-error="Please select a query type"
+              required
+            />
+            <label for="support">Support Request</label>
+          </div>
+          <span class="error-message" aria-live="polite"></span>
+        </fieldset>
+        <div class="form-group span-all">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" required></textarea>
+          <span class="error-message" aria-live="polite"></span>
+        </div>
+        <div class="form-group span-all">
+          <input type="checkbox" data-error="To submit this form. please consent to being contacted" name="consent" id="consent" required />
+          <label for="consent">I consent to being contacted by the team</label>
+          <p class="error-message" aria-live="polite"></p>
+        </div>
+        <button class="span-all">Submit</button>
+      </form>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Belhadj Mohammed</a>.
+    </div>
+  </body>
+</html>

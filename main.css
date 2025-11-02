@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Karla";
+  src: url("assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+}
+:root {
+  --bg-color: hsl(148, 38%, 91%);
+  --green: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(186, 15%, 59%);
+  --dark-grey: hsl(187, 24%, 22%);
+}
+/* Globel Ruls */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  accent-color: var(--green);
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+}
+h1,
+h2,
+p {
+  margin-block: 0;
+}
+input,
+textarea,
+button {
+  font: inherit;
+}
+.span-all {
+  grid-column: 1 / -1;
+}
+/* Layout */
+.contact {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-inline-size: 700px;
+  margin-inline: auto;
+  position: relative;
+}
+form {
+  display: grid;
+  gap: 1rem;
+  @media (width > 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+fieldset {
+  border: none;
+  padding: 0;
+  display: grid;
+  gap: inherit;
+  grid-template-columns: inherit;
+}
+textarea {
+  resize: block;
+  box-sizing: content-box;
+  height: 6lh;
+}
+.form-group {
+  display: grid;
+  grid-auto-rows: max-content;
+}
+fieldset:has([required]) legend,
+.form-group:has(:not([type="radio"])[required]) label {
+  display: flex;
+  gap: 1ch;
+  &::after {
+    content: "*";
+    color: var(--green);
+  }
+}
+input,
+textarea,
+.form-group:has([type="radio"]) {
+  border: 1px solid var(--dark-grey);
+  border-radius: 6px;
+  padding: 0.75em 1.5em;
+  &:focus-visible {
+    outline-color: var(--green);
+  }
+}
+input:hover {
+  border-color: var(--green);
+}
+[type="radio"],
+[type="checkbox"] {
+  width: 1rem;
+}
+.form-group:has([type="radio"], [type="checkbox"]) {
+  display: flex;
+  gap: 1ch;
+}
+.form-group:has([type="radio"]) {
+  position: relative;
+  label::after {
+    content: "";
+    position: absolute;
+    content: "";
+    inset: 0;
+  }
+}
+.form-group:has([type="radio"]:checked) {
+  background-color: var(--bg-color);
+  border-color: var(--green);
+}
+button {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    background-color: var(--dark-grey);
+  }
+}
+input:user-invalid {
+  border-color: var(--red);
+}
+.error-message {
+  color: var(--red);
+}
+.error-message:empty {
+  display: none;
+}
+/* Success Message */
+.success-msg {
+  display: none;
+  background-color: var(--dark-grey);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  width: fit-content; 
+  margin: 0 auto; 
+}
+.success-msg h4 {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 8px; 
+  margin: 0;
+  font-weight: 400;
+  color: var(--white);
+}
+.success-msg img {
+  width: 20px;
+  height: 20px;
+}
+
+.success-msg p {
+  color: var(--light-grey);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
