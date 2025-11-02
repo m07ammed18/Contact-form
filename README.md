@@ -85,4 +85,4 @@ function validateField(field) {
 - Frontend Mentor - [@m07ammed18](https://www.frontendmentor.io/profile/m07ammed18)
 
 ## Acknowledgments
-Special thanks to Kevin Powell for their tutorials and helpful discussions on accessible form design.
+Thanks to Frontend Mentor for providing realistic front-end challenges.
